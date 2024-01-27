@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const AdditionForm = () => {
   const [tickers, setTickers] = useState(['']); // Array to store ticker symbols
 
@@ -12,6 +12,9 @@ const AdditionForm = () => {
   const handleAddSymbol = () => {
     if (tickers.length < 4) {
       setTickers([...tickers, '']); // Add a new empty ticker symbol to the array
+    }
+    if(tickers.length>=4){
+        document.getElementById("additionButton")
     }
   };
 
@@ -35,7 +38,7 @@ const AdditionForm = () => {
               className="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
             />
             {index === tickers.length - 1 && ( // Display the "+" button only for the last input field
-              <button
+              <button id="additionButton"
                 type="button"
                 onClick={handleAddSymbol}
                 className="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -49,7 +52,7 @@ const AdditionForm = () => {
           type="submit"
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full"
         >
-          Submit
+          <Link to="/dataDisplay">Submit</Link>
         </button>
       </form>
     </div>
