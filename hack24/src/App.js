@@ -17,8 +17,10 @@ function App() {
   }, [])
 
   return (
+
     <div>
       {console.log(data)}
+
     </div>
   );
 }
