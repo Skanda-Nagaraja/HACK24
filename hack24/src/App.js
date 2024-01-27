@@ -3,7 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 
 import './App.css';
-import AdditionForm from './components/form/additionForm';
+import AdditionForm from './components/form/AdditionForm';
 import DataDisplay from './components/dataDisplay/DataDisplay';
 function App() {
   // Declare state at the top of the function
