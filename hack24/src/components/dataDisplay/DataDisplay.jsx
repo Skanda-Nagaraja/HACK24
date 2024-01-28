@@ -1,25 +1,25 @@
-// MainPage.jsx
 import React, { useState } from 'react';
-//import Graph from './Graph';
-//import SentimentGraph from './SentimentGraph';
-//import GPTText from './GPTText';
-//import AdditionForm from './components/form/AdditionForm';
+import "./DataDisplay.css"
 
 const MainPage = () => {
   const [selectedStock, setSelectedStock] = useState('T1');
-  const stocks = ['T1', 'T2', 'T3', 'T4']; // This could be dynamic based on your application
-
-  // Here you would have the logic to fetch the data for the selected stock
-  // For example, fetchStockData(selectedStock) function that updates the state with the fetched data
+  const stocks = ['T1', 'T2', 'T3', 'T4'];
 
   return (
     <div>
-      <div className="flex justify-around p-4 bg-gray-200">
+      <div className="flex justify-around pd-10 bg-red-400">
         {stocks.map((stock) => (
           <button
             key={stock}
             onClick={() => setSelectedStock(stock)}
-            className={`p-2 ${selectedStock === stock ? 'bg-blue-600 text-white' : 'bg-white text-black'}`}
+            className={`px-4 py-2 text-lg rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 
+                        ${selectedStock === stock ? 'shadow-lg' : 'shadow-sm'} 
+                        hover:border-b-4 hover:border-gray-400`}
+            style={{
+              backgroundColor: selectedStock === stock ? '#F4FAFF' : '',
+              borderColor: selectedStock === stock ? '#4F646F' : '',
+              borderWidth: selectedStock === stock ? '4px' : '0px',
+            }}
           >
             {stock}
           </button>
