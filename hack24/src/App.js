@@ -9,17 +9,6 @@ function App() {
   // Declare state at the top of the function
   const [data, setData] = useState([{}]);
 
-  useEffect(() => {
-    fetch("/members").then(
-      res => res.json()
-    ).then(
-      data => {
-        setData(data)
-        console.log(data)
-      }
-    )
-  }, [])
-
   return (
 
     <div class="App">

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import "./DataDisplay.css"
 import Graph from '../graph/Graph';
-
 const MainPage = () => {
-  const [selectedStock, setSelectedStock] = useState('T1');
-  const stocks = ['T1', 'T2', 'T3', 'T4'];
+  const [selectedStock, setSelectedStock] = useState('');
+  const stocks = ['TSLA', 'T2', 'T3', 'T4'];
 
   return (
     <div>
