@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom'
 import "./DataDisplay.css"
 import Graph from '../graph/Graph';
 const MainPage = () => {
+  const loco = useLocation()
+  const {stocks} = loco.state;
   const [selectedStock, setSelectedStock] = useState('');
-  const stocks = ['TSLA', 'T2', 'T3', 'T4'];
+  // const [stocks, setStocks] = useState([]);
+  // useEffect(() => {
+  // //   // Retrieve the tickers from local storage
+  // //   // const savedTickers = localStorage.getItem('tickers');
+  // //   console.log(stocks)
+  // //   const savedTickers = stocks;
+
+  // // }, []);
 
   return (
     <div>
@@ -26,7 +36,7 @@ const MainPage = () => {
           </button>
         ))}
       </div>
-      <Graph selectedStock={selectedStock} />
+      <Graph ticker={selectedStock} />
       {/* //<SentimentGraph selectedStock={selectedStock} />
      //<GPTText selectedStock={selectedStock} /> */}
     </div>
