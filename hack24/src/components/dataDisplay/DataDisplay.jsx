@@ -7,7 +7,7 @@ const MainPage = () => {
 
   return (
     <div>
-      <div className="flex justify-around pd-10 bg-red-400">
+      <div className="flex justify-around pd-10 bg-slate-400">
         {stocks.map((stock) => (
           <button
             key={stock}
@@ -16,9 +16,10 @@ const MainPage = () => {
                         ${selectedStock === stock ? 'shadow-lg' : 'shadow-sm'} 
                         hover:border-b-4 hover:border-gray-400`}
             style={{
-              backgroundColor: selectedStock === stock ? '#F4FAFF' : '',
-              borderColor: selectedStock === stock ? '#4F646F' : '',
-              borderWidth: selectedStock === stock ? '4px' : '0px',
+                backgroundColor: selectedStock === stock ? '#F4FAFF' : '',
+                borderBottomColor: selectedStock === stock ? 'green' : 'transparent', // This will apply a green underline
+                borderBottomWidth: selectedStock === stock ? '4px' : '0px',
+                borderBottomStyle: 'solid' // This ensures the underline is solid
             }}
           >
             {stock}
