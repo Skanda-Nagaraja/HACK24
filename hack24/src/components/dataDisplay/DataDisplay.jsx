@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import "./DataDisplay.css"
 
-const MainPage = () => {
+const DataDisplay = () => {
   const [selectedStock, setSelectedStock] = useState('T1');
-  const stocks = ['T1', 'T2', 'T3', 'T4'];
-
+  const loco = useLocation()
+  const {stocks}= loco.state;
+  // const [stocks, setStocks] = useState([''])
+  console.log(stocks)
   return (
     <div>
       <div className="flex justify-around pd-10 bg-slate-400">
@@ -33,4 +36,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default DataDisplay;
