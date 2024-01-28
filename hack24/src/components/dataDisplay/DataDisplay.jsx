@@ -1,9 +1,9 @@
 // MainPage.jsx
 import React, { useState } from 'react';
-import Graph from './Graph';
-import SentimentGraph from './SentimentGraph';
-import GPTText from './GPTText';
-import AdditionForm from './components/form/AdditionForm';
+//import Graph from './Graph';
+//import SentimentGraph from './SentimentGraph';
+//import GPTText from './GPTText';
+//import AdditionForm from './components/form/AdditionForm';
 
 const MainPage = () => {
   const [selectedStock, setSelectedStock] = useState('T1');
@@ -25,9 +25,9 @@ const MainPage = () => {
           </button>
         ))}
       </div>
-      <Graph selectedStock={selectedStock} />
-      <SentimentGraph selectedStock={selectedStock} />
-      <GPTText selectedStock={selectedStock} />
+      {/* <Graph selectedStock={selectedStock} /> */}
+      {/* //<SentimentGraph selectedStock={selectedStock} />
+     //<GPTText selectedStock={selectedStock} /> */}
     </div>
   );
 };
