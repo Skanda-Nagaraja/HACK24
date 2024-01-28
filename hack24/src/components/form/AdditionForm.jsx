@@ -7,6 +7,7 @@ const AdditionForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle the form submission here, such as sending the tickers to an API or another component
+    localStorage.setItem('tickers', JSON.stringify(tickers));
     console.log(tickers);
   };
 
