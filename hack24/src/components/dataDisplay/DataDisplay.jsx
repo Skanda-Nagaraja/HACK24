@@ -8,6 +8,7 @@ const MainPage = () => {
   const {stocks} = loco.state;
   const [selectedStock, setSelectedStock] = useState(stocks[0]);
 
+
   const [rating, setRating] = useState(0)
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +30,7 @@ const MainPage = () => {
   
     fetchData();
   }, [selectedStock]);
+
 
   return (
     <div className="min-h-full space-y-10">
@@ -53,9 +55,9 @@ const MainPage = () => {
       </div>
       <Graph ticker={selectedStock} />
        {/* //<SentimentGraph selectedStock={selectedStock} /> */}
-     <TextGPT selectedStock={"AMD"} /> 
+     <TextGPT selectedStock={selectedStock} /> 
     </div>
   );
 };
 
-export default MainPage;
+export default DataDisplay;
