@@ -3,9 +3,10 @@ import { useLocation } from 'react-router-dom';
 import "./DataDisplay.css"
 
 const DataDisplay = () => {
-  const [selectedStock, setSelectedStock] = useState('T1');
+ 
   const loco = useLocation()
   const {stocks}= loco.state;
+  const [selectedStock, setSelectedStock] = useState(stocks[0]);
   // const [stocks, setStocks] = useState([''])
   console.log(stocks)
   return (
