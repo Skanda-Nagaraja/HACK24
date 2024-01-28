@@ -2,14 +2,38 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom'
 import "./DataDisplay.css"
 import Graph from '../graph/Graph';
+import TextGPT from '../TextGpt/TextGPT';
 const MainPage = () => {
   const loco = useLocation()
   const {stocks} = loco.state;
   const [selectedStock, setSelectedStock] = useState(stocks[0]);
 
 
+  const [rating, setRating] = useState(0)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/posts/AMD`);
+        const data = response.json()
+        console.log(data)
+  
+        if (data.error) {
+          alert('Error: No data found for this stock');
+        } else {
+          setRating(Math.round(data.rating));
+          console.log(rating);
+        }
+      } catch (error) {
+        console.error('Error fetching rating:', error);
+      }
+    };
+  
+    fetchData();
+  }, [selectedStock]);
+
+
   return (
-    <div>
+    <div className="min-h-full space-y-10">
       <div className="flex justify-around pd-10 bg-slate-400">
         {stocks.map((stock) => (
           <button
@@ -30,8 +54,8 @@ const MainPage = () => {
         ))}
       </div>
       <Graph ticker={selectedStock} />
-      {/* //<SentimentGraph selectedStock={selectedStock} />
-     //<GPTText selectedStock={selectedStock} /> */}
+       {/* //<SentimentGraph selectedStock={selectedStock} /> */}
+     <TextGPT selectedStock={selectedStock} /> 
     </div>
   );
 };
