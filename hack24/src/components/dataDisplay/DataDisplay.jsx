@@ -5,7 +5,7 @@ import Graph from '../graph/Graph';
 const MainPage = () => {
   const loco = useLocation()
   const {stocks} = loco.state;
-  const [selectedStock, setSelectedStock] = useState('');
+  const [selectedStock, setSelectedStock] = useState(stocks[0]);
 
   return (
     <div>
@@ -13,7 +13,7 @@ const MainPage = () => {
         {stocks.map((stock) => (
           <button
             key={stock}
-            onClick={() => setSelectedStock(stock)}
+            onClick={() => {setSelectedStock(stock)}}
             className={`px-4 py-2 text-lg rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 
                         ${selectedStock === stock ? 'shadow-lg' : 'shadow-sm'} 
                         hover:border-b-4 hover:border-gray-400`}
