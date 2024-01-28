@@ -15,6 +15,7 @@ const MainPage = () => {
 
   // // }, []);
 
+
   return (
     <div>
       <div className="flex justify-around pd-10 bg-slate-400">
@@ -43,4 +44,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default DataDisplay;

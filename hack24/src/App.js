@@ -9,6 +9,7 @@ function App() {
   // Declare state at the top of the function
   const [data, setData] = useState([{}]);
 
+
   return (
 
     <div class="App">
