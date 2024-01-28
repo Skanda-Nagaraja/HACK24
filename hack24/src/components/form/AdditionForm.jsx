@@ -7,6 +7,7 @@ const AdditionForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle the form submission here, such as sending the tickers to an API or another component
+    localStorage.setItem('tickers', JSON.stringify(tickers));
     console.log(tickers);
   };
 
@@ -56,7 +57,7 @@ const AdditionForm = () => {
           type="submit"
           className="rounded-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded "
         >
-          <Link to="/dataDisplay">Submit</Link>
+          <Link to="/dataDisplay" state={{stocks:tickers}}>Submit</Link>
         </button>
       </form>
     </div>

@@ -9,8 +9,8 @@ function Graph({ ticker }) {
     const endDate = "2024-01-25";
 
     useEffect(() => {
-        console.log(`/graph/TSLA/${startDate}/${endDate}`)
-        fetch(`/graph/TSLA/${startDate}/${endDate}`)
+        console.log(`/graph/${ticker}/${startDate}/${endDate}`)
+        fetch(`/graph/${ticker}/${startDate}/${endDate}`)
             .then(res => res.json())
             .then(data => {
                 console.log('Data from server:', data);
