@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./DataDisplay.css"
+import Graph from '../graph/Graph';
 
 const MainPage = () => {
   const [selectedStock, setSelectedStock] = useState('T1');
@@ -26,7 +27,7 @@ const MainPage = () => {
           </button>
         ))}
       </div>
-      {/* <Graph selectedStock={selectedStock} /> */}
+      <Graph selectedStock={selectedStock} />
       {/* //<SentimentGraph selectedStock={selectedStock} />
      //<GPTText selectedStock={selectedStock} /> */}
     </div>
