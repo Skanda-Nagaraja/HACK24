@@ -28,11 +28,12 @@ const AdditionForm = () => {
   };
 
   return (
+    
     <div className="fullAdditionPage">
-      <h1 className="bg-blue-500">Add Your Stock Tickers!</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <h2 className="bg-blue-500">Add Your Stock Tickers!</h2>
+      <form onSubmit={handleSubmit} className="space-y-4 pt-2">
         {tickers.map((ticker, index) => (
-          <div key={index} className="flex items-center">
+          <div key={index} className="flex items-center justify-center">
             <input
               type="text"
               value={ticker.toUpperCase()} // Converts input to uppercase
@@ -53,7 +54,7 @@ const AdditionForm = () => {
         ))}
         <button
           type="submit"
-          className="rounded-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full"
+          className="rounded-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded "
         >
           <Link to="/dataDisplay">Submit</Link>
         </button>
