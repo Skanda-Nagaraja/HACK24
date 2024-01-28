@@ -56,7 +56,7 @@ const AdditionForm = () => {
           type="submit"
           className="rounded-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded "
         >
-          <Link to="/dataDisplay">Submit</Link>
+          <Link to="/dataDisplay" state={{stocks:tickers}}>Submit</Link>
         </button>
       </form>
     </div>
