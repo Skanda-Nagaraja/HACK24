@@ -9,8 +9,8 @@ function Graph({ ticker }) {
     const endDate = "2024-01-25";
 
     useEffect(() => {
-        console.log(`/graph/${ticker}/${startDate}/${endDate}`)
-        fetch(`/graph/${ticker}/${startDate}/${endDate}`)
+        console.log(`http://localhost:5000/graph/TSLA/2024-01-10/2024-01-25`)
+        fetch(`http://localhost:5000/graph/${ticker}/2024-01-10/2024-01-25`)
             .then(res => res.json())
             .then(data => {
                 console.log('Data from server:', data);
@@ -24,8 +24,7 @@ function Graph({ ticker }) {
     }, [ticker, startDate, endDate]); // Dependencies array to re-run the effect when these values change
 
     useEffect(() => {
-        console.log('X Data:', graphDataX);
-        console.log('Y Data:', graphDataY);
+        console.log(ticker)
     }, [graphDataX, graphDataY]);
 
     return (

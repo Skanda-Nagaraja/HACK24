@@ -13,8 +13,8 @@ function App() {
 
   return (
 
-    <div className="App font-bebas min-h-screen bg-background-color">
-      <BrowserRouter className="border-black border-2">
+    <div className="App font-bebas bg-background-color min-h-screen">
+      <BrowserRouter >
         <div className="pages">
           <Routes>
             <Route path='/' element={<AdditionForm />}/>

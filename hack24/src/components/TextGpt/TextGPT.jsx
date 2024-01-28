@@ -13,7 +13,7 @@ const CompanyProfile = ({ selectedStock }) => {
             }
 
             try {
-                const response = await fetch(`/company_description?ticker=${selectedStock}`, {
+                const response = await fetch(`http://localhost:5000/company_description?ticker=${selectedStock}`, {
                     method: 'GET',
                 });
 
