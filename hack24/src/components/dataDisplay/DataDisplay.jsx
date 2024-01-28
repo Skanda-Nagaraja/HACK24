@@ -6,14 +6,6 @@ const MainPage = () => {
   const loco = useLocation()
   const {stocks} = loco.state;
   const [selectedStock, setSelectedStock] = useState('');
-  // const [stocks, setStocks] = useState([]);
-  // useEffect(() => {
-  // //   // Retrieve the tickers from local storage
-  // //   // const savedTickers = localStorage.getItem('tickers');
-  // //   console.log(stocks)
-  // //   const savedTickers = stocks;
-
-  // // }, []);
 
   return (
     <div>
@@ -29,7 +21,7 @@ const MainPage = () => {
                 backgroundColor: selectedStock === stock ? '#F4FAFF' : '',
                 borderBottomColor: selectedStock === stock ? 'green' : 'transparent', // This will apply a green underline
                 borderBottomWidth: selectedStock === stock ? '4px' : '0px',
-                borderBottomStyle: 'solid' // This ensures the underline is solid
+                borderBottomStyle: 'solid', // This ensures the underline is solid,
             }}
           >
             {stock}
