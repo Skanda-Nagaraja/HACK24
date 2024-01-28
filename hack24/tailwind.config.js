@@ -3,7 +3,16 @@
 module.exports = {
   content: ["./src/**/*.{html,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      color:{
+        'background-color': '#20242C'
+      },
+      fontFamily: {
+        'bebas': ['"Bebas Neue"', 'cursive'],
+        'neuton': ['Neuton', 'serif'],
+        'honk': ['Honk', 'cursive'],
+      }
+    },
   },
   plugins: [],
 }

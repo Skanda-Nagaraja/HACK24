@@ -30,8 +30,9 @@ const AdditionForm = () => {
 
   return (
     
-    <div className="fullAdditionPage">
-      <h2 className="bg-blue-500">Add Your Stock Tickers!</h2>
+    <div className="fullAdditionPage font-bebas font-semibold font-xl">
+      <h1 className="text-4xl font-neuton bg-slate-400 mb-20">Stock Vibes</h1>
+      {/* <h2 className="bg-slate-400 mb-20">Add Your Stock Tickers!</h2> */}
       <form onSubmit={handleSubmit} className="space-y-4 pt-2">
         {tickers.map((ticker, index) => (
           <div key={index} className="flex items-center justify-center">
@@ -46,7 +47,7 @@ const AdditionForm = () => {
               <button id="additionButton"
                 type="button"
                 onClick={handleAddSymbol}
-                className="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="ml-2 bg-slate-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
                 +
               </button>
@@ -55,7 +56,7 @@ const AdditionForm = () => {
         ))}
         <button
           type="submit"
-          className="rounded-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded "
+          className="rounded-full bg-[#363537] hover:bg-green-700 text-white font-bold py-2 px-4 rounded "
         >
           <Link to="/dataDisplay" state={{stocks:tickers}}>Submit</Link>
         </button>

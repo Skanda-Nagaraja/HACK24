@@ -5,19 +5,20 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import AdditionForm from './components/form/AdditionForm';
 import DataDisplay from './components/dataDisplay/DataDisplay';
+import TextGPT from './components/TextGpt/TextGPT';
 function App() {
   // Declare state at the top of the function
   const [data, setData] = useState([{}]);
 
   return (
 
-    <div class="App">
-      <BrowserRouter>
-      <div class="titleDiv"></div>
+    <div className="App font-bebas min-h-screen bg-background-color">
+      <BrowserRouter className="border-black border-2">
         <div className="pages">
           <Routes>
             <Route path='/' element={<AdditionForm />}/>
             <Route path='/dataDisplay' element={<DataDisplay/>}/>
+            <Route path='/textGPT' element={<TextGPT/>}/>
           </Routes>
           {console.log(data)}
         </div>
