@@ -65,4 +65,4 @@ const DataDisplay = () => {
   );
 };
 
-export default DataDisplay;
+export default MainPage;
